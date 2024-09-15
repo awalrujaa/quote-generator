@@ -1,0 +1,28 @@
+body{
+    background-color: antiquewhite;
+    
+}
+
+#container {
+    background-color: grey;
+    border: 5px solid black;
+    height: 275px;
+    width: 750px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 20px;
+}
+
+#randombtn, #prevbtn, #nextbtn {
+    margin: 50px auto;
+    height: 50px;
+    width: 250px;
+    font-size: 22px;
+    background-color: green;
+}
+
+#output{
+    margin: 25px auto;
+    font-size: 26px;
+    color: white;
+}
