@@ -1,28 +1,172 @@
-body{
-    background-color: antiquewhite;
-    
+/* General styles for the body */
+body {
+    transition: background-color 0.4s, color 0.4s;
+    background-color: #f0f0f0; /* Light mode background */
+    color: black; /* Light mode text color */
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+    background-color: #333; /* Dark mode background */
+    color: white; /* Dark mode text color */
+}
+
+/* Toggle container styles */
+.toggle-container {
+    display: flex;
+    justify-content: flex-end; /* Align items to the right */
+    align-items: center;
+    padding: 20px; /* Add padding if needed */
+}
+
+/* Toggle switch styles */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+    margin-right: 10px; /* Space between switch and text */
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    border-radius: 50%;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+}
+
+
+
+body.dark-mode .slider {
+    background-color: grey;
+}
+
+body.dark-mode .slider:before {
+    transform: translateX(26px);
 }
 
 #container {
-    background-color: grey;
-    border: 5px solid black;
-    height: 275px;
-    width: 750px;
-    margin: 0 auto;
+    border: 2px solid rgb(237, 227, 227);
+    height: 350px; /* Allow container to expand with content */
+    width: 700px;
+    margin: 20px auto; /* Center container and add margin */
     text-align: center;
     padding: 20px;
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for better appearance */
+    transition: border-color 0.3s, background-color 0.3s; /* Smooth transition for border and background color */
 }
 
-#randombtn, #prevbtn, #nextbtn {
-    margin: 50px auto;
-    height: 50px;
-    width: 250px;
-    font-size: 22px;
-    background-color: green;
+/* Dark mode styles */
+body.dark-mode #container {
+    border: 2px solid #555; /* Dark gray border color for dark mode */
+    background-color: #444; /* Dark background color for dark mode */
 }
 
-#output{
-    margin: 25px auto;
-    font-size: 26px;
-    color: white;
+/* Container for buttons */
+.button-container {
+    display: flex;
+    justify-content: center; /* Center the buttons horizontally */
+    gap: 20px; /* Space between buttons */
+    margin-top: 20px; /* Space above the button container */
 }
+
+/* Light mode button styles */
+button {
+    background-color: #009688; /* Teal */
+    color: white; /* Text color */
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #00796B; /* Darker Teal on hover */
+}
+
+
+#output {
+    margin: 10px;
+    height: 75px;
+    font-size: 20px;
+    padding: 25px;
+}
+
+#heading {
+    margin: 20px auto;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+select {
+    background-color: #f0f0f0; /* Light background color */
+    color: #333; /* Dark text color */
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px; /* Padding inside the select */
+    font-size: 16px; /* Font size */
+    font-family: Arial, sans-serif; /* Font family */
+    width: 100%; /* Full width */
+    max-width: 250px; /* Maximum width */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+/* Focus State */
+select:focus {
+    border-color: #009688; /* Change border color on focus */
+    outline: none; /* Remove default outline */
+}
+
+/* Container for font size control buttons */
+.font-size-controls {
+    display: flex;
+    justify-content: center; /* Center the font size control buttons horizontally */
+    gap: 10px; /* Space between the font size buttons */
+    margin: 20px 0; /* Space above and below the font size controls */
+}
+
+/* Font size control button styles */
+.font-size-controls button {
+    background-color: #009688; /* Darker teal for contrast */
+    color: white; /* Text color */
+    border: none;
+    padding: 5px 15px;
+    font-size: 18px; /* Larger font size for better visibility */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.font-size-controls button:hover {
+    background-color: #00796B; /* Even darker teal on hover */
+}
+

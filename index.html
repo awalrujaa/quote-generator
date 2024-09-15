@@ -7,18 +7,32 @@
   </head>
 
   <body>
-    <div id="container">
-        <label for="category">Choose an option:</label>
-        <select id="category" name="options">
-            <option value="science">Science</option>
-            <option value="motivation">Motivation</option>
-        </select>
-        <button id="prevbtn">Previous</button>
-        <button id="nextbtn">Next</button>
-        <div id="output"></div>
-        <button id="randombtn">Random Quote</button>
-
+    <div class="toggle-container">
+        <label class="toggle-switch">
+            <input type="checkbox" id="dark-mode-toggle">
+            <span class="slider"></span>
+        </label>
+        <p>Toggle Mode</p>
     </div>
+        <div id="container">
+            <p id="heading">Quote Generator</p>
+            <label for="category">Choose a Genre: </label>
+            <select id="category" name="options">
+                <option value="science">Science</option>
+                <option value="motivation">Motivation</option>
+            </select>
+            <div id="output"></div>
+            <div class="font-size-controls">
+                <button id="decreaseFont">A-</button>
+                <button id="increaseFont">A+</button>
+            </div>
+            <div class="button-container">
+                <button id="prevbtn">Previous</button>
+                <button id="randombtn">Random Quote</button>
+                <button id="nextbtn">Next</button>
+            </div>
+            
+        </div>
     <script src="main.js"></script>
   </body>
 </html>

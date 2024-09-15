@@ -64,3 +64,44 @@ category.addEventListener('change', function(){
     const quoteDisplay = document.getElementById('output');
     quoteDisplay.textContent = quotes[currentIndex];
 })
+
+const toggleCheckbox = document.getElementById('dark-mode-toggle');
+
+// Check for saved user preference
+if (localStorage.getItem('dark-mode') === 'enabled') {
+    document.body.classList.add('dark-mode');
+    toggleCheckbox.checked = true;
+}
+
+toggleCheckbox.addEventListener('change', function() {
+    if (this.checked) {
+        document.body.classList.add('dark-mode');
+        localStorage.setItem('dark-mode', 'enabled');
+    } else {
+        document.body.classList.remove('dark-mode');
+        localStorage.setItem('dark-mode', 'disabled');
+    }
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    const output = document.getElementById('output');
+    const increaseFontBtn = document.getElementById('increaseFont');
+    const decreaseFontBtn = document.getElementById('decreaseFont');
+
+    let currentFontSize = 20; // Initial font size in pixels
+
+    increaseFontBtn.addEventListener('click', () => {
+        if (currentFontSize < 40) { // Maximum font size
+            currentFontSize += 2;
+            output.style.fontSize = `${currentFontSize}px`;
+        }
+    });
+
+    decreaseFontBtn.addEventListener('click', () => {
+        if (currentFontSize > 12) { // Minimum font size
+            currentFontSize -= 2;
+            output.style.fontSize = `${currentFontSize}px`;
+        }
+    });
+});
+
