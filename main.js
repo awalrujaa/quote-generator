@@ -91,7 +91,7 @@ document.addEventListener('DOMContentLoaded', () => {
     let currentFontSize = 20; // Initial font size in pixels
 
     increaseFontBtn.addEventListener('click', () => {
-        if (currentFontSize < 40) { // Maximum font size
+        if (currentFontSize < 25) { // Maximum font size
             currentFontSize += 2;
             output.style.fontSize = `${currentFontSize}px`;
         }

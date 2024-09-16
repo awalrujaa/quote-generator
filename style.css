@@ -72,8 +72,9 @@ body.dark-mode .slider:before {
 
 #container {
     border: 2px solid rgb(237, 227, 227);
-    height: 350px; /* Allow container to expand with content */
-    width: 700px;
+    height: 375px; /* Allow container to expand with content */
+    width: 60%;
+    max-width: 700px;
     margin: 20px auto; /* Center container and add margin */
     text-align: center;
     padding: 20px;
@@ -91,6 +92,7 @@ body.dark-mode #container {
 /* Container for buttons */
 .button-container {
     display: flex;
+    flex-wrap: wraps;
     justify-content: center; /* Center the buttons horizontally */
     gap: 20px; /* Space between buttons */
     margin-top: 20px; /* Space above the button container */
@@ -115,7 +117,7 @@ button:hover {
 
 #output {
     margin: 10px;
-    height: 75px;
+    height: 100px;
     font-size: 20px;
     padding: 25px;
 }
@@ -170,3 +172,49 @@ select:focus {
     background-color: #00796B; /* Even darker teal on hover */
 }
 
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .toggle-container {
+        flex-direction: column; /* Stack toggle and text vertically */
+        align-items: flex-start; /* Align to the start */
+    }
+
+    .toggle-switch {
+        margin-right: 0;
+        margin-bottom: 10px; /* Space between switch and text */
+    }
+
+    #heading {
+        font-size: 20px;
+    }
+
+    button {
+        padding: 8px 16px; /* Adjust button padding for smaller screens */
+        font-size: 14px;
+    }
+
+    #output {
+        font-size: 18px;
+    }
+
+    .font-size-controls button {
+        padding: 5px 10px; /* Adjust padding for font size buttons */
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    button {
+        padding: 6px 12px; /* Further adjust button padding */
+        font-size: 12px;
+    }
+
+    #output {
+        font-size: 16px;
+    }
+
+    .font-size-controls button {
+        padding: 4px 8px;
+        font-size: 14px;
+    }
+}
