@@ -1,4 +1,3 @@
-let btn = document.getElementById('btn');
 let output = document.getElementById('output');
 let allQuotes = {
     science: [
@@ -28,8 +27,8 @@ let allQuotes = {
 };
 
 let currentCategory = 'science';
-let currentIndex = 0;
 let quotes = allQuotes[currentCategory];
+let currentIndex = Math.floor(Math.random() * quotes.length);
 
 window.onload = function() {
     // Get the element where you want to display the quote
@@ -83,25 +82,22 @@ toggleCheckbox.addEventListener('change', function() {
     }
 });
 
-document.addEventListener('DOMContentLoaded', () => {
-    const output = document.getElementById('output');
-    const increaseFontBtn = document.getElementById('increaseFont');
-    const decreaseFontBtn = document.getElementById('decreaseFont');
+const increaseFontBtn = document.getElementById('increaseFont');
+const decreaseFontBtn = document.getElementById('decreaseFont');
 
-    let currentFontSize = 20; // Initial font size in pixels
+let currentFontSize = 20; // Initial font size in pixels
 
-    increaseFontBtn.addEventListener('click', () => {
-        if (currentFontSize < 25) { // Maximum font size
-            currentFontSize += 2;
-            output.style.fontSize = `${currentFontSize}px`;
-        }
-    });
+increaseFontBtn.addEventListener('click', () => {
+    if (currentFontSize < 25) { // Maximum font size
+        currentFontSize += 2;
+        output.style.fontSize = `${currentFontSize}px`;
+    }
+});
 
-    decreaseFontBtn.addEventListener('click', () => {
-        if (currentFontSize > 12) { // Minimum font size
-            currentFontSize -= 2;
-            output.style.fontSize = `${currentFontSize}px`;
-        }
-    });
+decreaseFontBtn.addEventListener('click', () => {
+    if (currentFontSize > 12) { // Minimum font size
+        currentFontSize -= 2;
+        output.style.fontSize = `${currentFontSize}px`;
+    }
 });
 

@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Quote Generator</title>
   </head>
 
@@ -23,9 +24,14 @@
             </select>
             <div id="output"></div>
             <div class="font-size-controls">
-                <button id="decreaseFont">A-</button>
-                <button id="increaseFont">A+</button>
+                <button id="decreaseFont">
+                    <i class="fas fa-minus"></i>
+                </button>
+                <button id="increaseFont">
+                    <i class="fas fa-plus"></i>
+                </button>
             </div>
+            
             <div class="button-container">
                 <button id="prevbtn">Previous</button>
                 <button id="randombtn">Random Quote</button>
